@@ -3,7 +3,7 @@ package co.com.sofkau.entrenamiento.curso;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.entrenamiento.curso.events.CursoCreado;
-import co.com.sofkau.entrenamiento.curso.events.DirectrizAgregadaAMentoria;
+import co.com.sofkau.entrenamiento.curso.events.DirectrizAgregadaDeMentoria;
 import co.com.sofkau.entrenamiento.curso.events.MentoriaCreada;
 import co.com.sofkau.entrenamiento.curso.values.*;
 
@@ -37,12 +37,12 @@ public class Curso extends AggregateEvent<CursoId> {
     }
 
     public void agregarMentoria( Nombre nombre, Fecha fecha){
-        var mentoriaId = new MentoriaId();
+        var mentoriaId = new MentoriaId("1");
         appendChange(new MentoriaCreada(mentoriaId, nombre, fecha)).apply();
     }
 
     public void agregarDirectrizDeMentoria(MentoriaId mentoriaId, Directiz directiz){
-        appendChange(new DirectrizAgregadaAMentoria(mentoriaId, directiz)).apply();
+        appendChange(new DirectrizAgregadaDeMentoria(mentoriaId, directiz)).apply();
     }
 
     public Nombre nombre() {

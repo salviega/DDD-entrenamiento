@@ -14,8 +14,5 @@ public class AgregarMentoriaUseCase  extends UseCase<RequestCommand<AgregarMento
                 command.getCoursoId(), repository().getEventsBy(command.getCoursoId().value())
         );
         curso.agregarMentoria(command.getNombre(), command.getFecha());
-
         emit().onResponse(new ResponseEvents(curso.getUncommittedChanges()));
-
-    }
-}
+    }}

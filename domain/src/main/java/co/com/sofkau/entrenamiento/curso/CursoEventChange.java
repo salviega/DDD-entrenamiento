@@ -2,7 +2,7 @@ package co.com.sofkau.entrenamiento.curso;
 
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofkau.entrenamiento.curso.events.CursoCreado;
-import co.com.sofkau.entrenamiento.curso.events.DirectrizAgregadaAMentoria;
+import co.com.sofkau.entrenamiento.curso.events.DirectrizAgregadaDeMentoria;
 import co.com.sofkau.entrenamiento.curso.events.MentoriaCreada;
 
 import java.util.HashMap;
@@ -24,8 +24,8 @@ public class CursoEventChange extends EventChange {
             curso.mentorias.put(mentoriaId, mentoria);
         });
 
-        apply((DirectrizAgregadaAMentoria event) -> {
-            curso.mentorias.get(event.getMentoriaId()).agregarDirectiz(event.getDirectiz());
+        apply((DirectrizAgregadaDeMentoria event) -> {
+            curso.mentorias.get(event.getMentoriaId()).agregarDirectiz(event.getDirectriz());
         });
     }
 }

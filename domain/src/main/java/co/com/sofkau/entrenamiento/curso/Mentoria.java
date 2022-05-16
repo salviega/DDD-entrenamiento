@@ -12,19 +12,19 @@ import java.util.Set;
 public class Mentoria extends Entity<MentoriaId> {
 
     protected Nombre nombre;
-    protected Set<Directiz> directices;
+    protected Set<Directiz> directrices;
     protected Fecha fecha;
 
     public Mentoria(MentoriaId entityId, Nombre nombre, Fecha fecha) {
         super(entityId);
         this.nombre = nombre;
         this.fecha = fecha;
-        this.directices = new HashSet<>();
+        this.directrices = new HashSet<>();
     }
 
     public void agregarDirectiz(Directiz directiz){
         //TODO: validaciones
-        this.directices.add(directiz);
+        this.directrices.add(directiz);
     }
 
 

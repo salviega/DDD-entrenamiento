@@ -54,7 +54,7 @@ class AgregarMentoriaUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (MentoriaCreada)events.get(0);
+        var event = (MentoriaCreada) events.get(0);
         Assertions.assertEquals("Aprendiendo de casos de usos", event.getNombre().value());
 
     }

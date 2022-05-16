@@ -16,7 +16,6 @@ public class AgregarMentoria extends Command {
         this.fecha = fecha;
     }
 
-
     public CursoId getCoursoId() {
         return coursoId;
     }
